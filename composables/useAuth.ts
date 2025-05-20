@@ -1,7 +1,5 @@
 import { useFetch, useCookie, useState } from '#app'
 
-const runtimeConfig = useRuntimeConfig()
-
 interface AuthResponse {
     jwt: string
     user: {
@@ -14,6 +12,7 @@ interface AuthResponse {
 
 export function useAuth() {
     const user = useState<AuthResponse['user'] | null>('user', () => null)
+    const runtimeConfig = useRuntimeConfig()
 
     const login = async (identifier: string, password: string) => {
         const { data, error } = await useFetch<AuthResponse>(runtimeConfig.apiUrl + 'auth/local', {
