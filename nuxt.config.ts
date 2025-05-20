@@ -3,7 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   runtimeConfig: {
-    apiUrl: '',
+    public: {
+      apiUrl: '',
+    },
   },
   modules: [
     '@nuxt/icon',

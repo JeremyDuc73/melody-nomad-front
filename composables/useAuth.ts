@@ -15,7 +15,7 @@ export function useAuth() {
     const runtimeConfig = useRuntimeConfig()
 
     const login = async (identifier: string, password: string) => {
-        const { data, error } = await useFetch<AuthResponse>(runtimeConfig.apiUrl + 'auth/local', {
+        const { data, error } = await useFetch<AuthResponse>(runtimeConfig.public.apiUrl + 'auth/local', {
             method: 'POST',
             body: { identifier, password },
         })
@@ -30,7 +30,7 @@ export function useAuth() {
     }
 
     const register = async (username: string, email: string, password: string) => {
-        const { data, error } = await useFetch<AuthResponse>(runtimeConfig.apiUrl + 'auth/local/register', {
+        const { data, error } = await useFetch<AuthResponse>(runtimeConfig.public.apiUrl + 'auth/local/register', {
             method: 'POST',
             body: { username, email, password },
         })
@@ -48,7 +48,7 @@ export function useAuth() {
         const token = useCookie('token')
         if (!token.value) return null
 
-        const { data, error } = await useFetch<AuthResponse['user']>(runtimeConfig.apiUrl + 'users/me', {
+        const { data, error } = await useFetch<AuthResponse['user']>(runtimeConfig.public.apiUrl + 'users/me', {
             headers: {
                 Authorization: `Bearer ${token.value}`,
             },
