@@ -1,5 +1,7 @@
 import { useFetch, useCookie, useState } from '#app'
 
+const runtimeConfig = useRuntimeConfig()
+
 interface AuthResponse {
     jwt: string
     user: {
@@ -14,7 +16,7 @@ export function useAuth() {
     const user = useState<AuthResponse['user'] | null>('user', () => null)
 
     const login = async (identifier: string, password: string) => {
-        const { data, error } = await useFetch<AuthResponse>('http://localhost:1337/api/auth/local', {
+        const { data, error } = await useFetch<AuthResponse>(runtimeConfig.apiUrl + 'auth/local', {
             method: 'POST',
             body: { identifier, password },
         })
@@ -29,7 +31,7 @@ export function useAuth() {
     }
 
     const register = async (username: string, email: string, password: string) => {
-        const { data, error } = await useFetch<AuthResponse>('http://localhost:1337/api/auth/local/register', {
+        const { data, error } = await useFetch<AuthResponse>(runtimeConfig.apiUrl + 'auth/local/register', {
             method: 'POST',
             body: { username, email, password },
         })
@@ -47,7 +49,7 @@ export function useAuth() {
         const token = useCookie('token')
         if (!token.value) return null
 
-        const { data, error } = await useFetch<AuthResponse['user']>('http://localhost:1337/api/users/me', {
+        const { data, error } = await useFetch<AuthResponse['user']>(runtimeConfig.apiUrl + 'users/me', {
             headers: {
                 Authorization: `Bearer ${token.value}`,
             },
