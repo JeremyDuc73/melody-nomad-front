@@ -1,2 +1,30 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+:root {
+    --font-heading: 'Evoxsy';
+    --font-body: 'Playfair Display';
+    --font-body-heading: 'Playfair Display SC';
+    --brown: #BE542E;
+    --beige: #FFF3DB;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--beige);
+    color: var(--brown);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    @media screen and (max-width: 1200px){
+        padding: 0 20px;
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+}

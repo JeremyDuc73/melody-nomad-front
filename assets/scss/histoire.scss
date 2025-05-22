@@ -1,0 +1,75 @@
+.hero-histoire {
+  background-image: url('/public/images/riz-1.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 812px;
+  &__logo {
+    position: absolute;
+    top: 20%;
+    left: 4%;
+  }
+  &__img-riziere {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+  }
+  &__img-nuage {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 350px;
+    position: absolute;
+    text-align: left;
+    top: 15%;
+    right: 1%;
+    z-index: 1;
+    text-transform: uppercase;
+    line-height: 250px;
+    font-family: var(--font-heading), serif;
+    color: var(--brown);
+  }
+}
+
+.section-1-histoire {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+
+.section-2-histoire {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 1050px){
+    flex-direction: column;
+  }
+  &__destinations {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.section-3-histoire {
+  h3 {
+    font-size: 40px;
+    font-family: var(--font-body-heading), serif;
+  }
+  .section-3-rates {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+}

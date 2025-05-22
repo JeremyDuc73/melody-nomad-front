@@ -1,0 +1,138 @@
+.hero-vietnam {
+  background-image: url('/public/images/riz-1.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 812px;
+  &__logo {
+    position: absolute;
+    top: 5%;
+    left: 42%;
+  }
+  &__img-riziere {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+  }
+  &__img-nuage {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+  &__map {
+    position: absolute;
+    z-index: 5;
+    top: 8%;
+    left: 15%;
+  }
+
+  h1 {
+    font-size: 350px;
+    position: absolute;
+    text-align: left;
+    top: 35%;
+    right: 15%;
+    z-index: 1;
+    text-transform: uppercase;
+    line-height: 250px;
+    font-family: var(--font-heading), serif;
+    color: var(--brown);
+  }
+}
+
+.section-2-vietnam {
+  height: 100px;
+  position: relative;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    z-index: 7;
+    top: -185px;
+    margin: 0 calc((100vw - 1200px) / 2);
+    width: 1200px;
+    background-color: var(--beige);
+    border-radius: 33px;
+    padding: 50px;
+    h4 {
+      text-align: center;
+      font-size: 36px;
+      font-family: var(--font-body-heading), serif;
+    }
+    &__middle {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      ul {
+        gap: 22px;
+        display: flex;
+        flex-direction: column;
+      }
+      &__img {
+        height: 176px;
+        width: 615px;
+        background-image: linear-gradient(to right, #FFF3DB 7%, rgba(255,255,255,0) 70%), url('/public/images/vietnam-card-img.png');
+      }
+    }
+    &__buttons {
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+      .inverted, .classic {
+        font-size: 24px;
+        font-family: var(--font-body-heading), serif;
+        padding: 15px 115px;
+        border-radius: 33px;
+      }
+      .inverted {
+        border: 1px solid var(--brown);
+      }
+      .classic {
+        color: var(--beige);
+        background-color: var(--brown);
+        border: 1px solid var(--brown);
+      }
+    }
+  }
+}
+
+.section-3-vietnam {
+  background-image:  url('/public/images/section-1-bg.jpeg');
+  background-position: center center;
+  background-color: rgba(255,243,219,0.8);
+  background-blend-mode: lighten;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 712px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+  &__nuage-top {
+    position: absolute;
+    top: 0;
+
+    object-fit: cover;
+    width: 100%;
+  }
+  &__nuage-bottom {
+    position: absolute;
+    bottom: 0;
+
+    object-fit: cover;
+    width: 100%;
+  }
+  &__text {
+    position: relative;
+    z-index: 8;
+    p {
+      font-size: 20px;
+      line-height: 1.7;
+    }
+  }
+}

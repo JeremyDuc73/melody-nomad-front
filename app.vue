@@ -1,5 +1,14 @@
+<script setup lang="ts">
+import { VueLenis } from 'lenis/vue'
+</script>
+
 <template>
-  <UApp>
-    <NuxtPage />
-  </UApp>
+  <VueLenis root />
+    <UApp>
+      <NuxtPage />
+    </UApp>
 </template>
+
+<style>
+@import '@nuxt/ui';
+</style>
