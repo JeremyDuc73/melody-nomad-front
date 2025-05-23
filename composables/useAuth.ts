@@ -18,6 +18,9 @@ export function useAuth() {
         const { data, error } = await useFetch<AuthResponse>(runtimeConfig.public.apiUrl + 'auth/local', {
             method: 'POST',
             body: { identifier, password },
+            headers: {
+                'Content-Type': 'application/json',
+            }
         })
 
         if (error.value) throw error.value

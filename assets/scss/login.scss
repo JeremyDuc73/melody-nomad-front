@@ -1,0 +1,105 @@
+.hero-login {
+  background-image: url('/public/images/riz-1.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 812px;
+  &__logo {
+    position: absolute;
+    top: 5%;
+    left: 42%;
+  }
+  &__img-riziere {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+  }
+  &__img-nuage {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 350px;
+    position: absolute;
+    text-align: left;
+    top: 35%;
+    right: 2%;
+    z-index: 1;
+    text-transform: uppercase;
+    line-height: 250px;
+    font-family: var(--font-heading), serif;
+    color: var(--brown);
+  }
+}
+.auth {
+  position: relative;
+  height: 650px;
+
+  &__container {
+    position: absolute;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.25);
+    top: -160px;
+    z-index: 9;
+    margin-left: calc((100vw - 1200px) / 2);
+    display: flex;
+    align-items: center;
+    background-color: var(--beige);
+    border-radius: 33px;
+
+    &__right {
+      padding: 44px;
+      width: 600px;
+
+      h3 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: var(--font-body-heading), serif;
+        font-size: 40px;
+      }
+    }
+  }
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-family: var(--font-body-heading), serif;
+        color: var(--brown);
+        margin-bottom: 5px;
+      }
+
+      input {
+        border: none;
+        border-radius: 20px;
+        padding: 10px 15px;
+        background-color: #e2aa89;
+      }
+    }
+    .separator {
+      text-align: center;
+      font-family: var(--font-body-heading), serif;
+      font-size: 25px;
+    }
+    .submit-btn {
+      background-color: var(--brown);
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-family: var(--font-body-heading), serif;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}

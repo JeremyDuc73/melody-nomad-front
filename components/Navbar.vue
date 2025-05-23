@@ -1,28 +1,31 @@
 <template>
+  <a class="profile-link" href="/profile">
+    <Icon class="profile-link__icon" name="mdi:account" size="35" />
+  </a>
   <div class="top-right-slide">
     <div class="inner-container-top">
-      <NuxtLink to="/" class="nav-links">ACCUEIL</NuxtLink>
+      <NuxtLink to="/" class="nav-links">Accueil</NuxtLink>
     </div>
   </div>
   <div class="middle-right-slide">
     <div class="inner-container-middle">
-      <NuxtLink to="/histoire" class="nav-links">NOTRE HISTOIRE</NuxtLink>
+      <NuxtLink to="/histoire" class="nav-links">Notre histoire</NuxtLink>
     </div>
   </div>
   <div class="bottom-right-slide">
     <div class="inner-container-bottom">
-      <NuxtLink to="#" class="nav-links">CONTACT</NuxtLink>
+      <NuxtLink to="/contact" class="nav-links">Contact</NuxtLink>
     </div>
   </div>
 
   <div class="top-left-slide">
     <div class="inner-container-left-top">
-      <NuxtLink to="/vietnam" class="nav-links">NOS VOYAGES</NuxtLink>
+      <NuxtLink to="/vietnam" class="nav-links">Nos voyages</NuxtLink>
     </div>
   </div>
   <div class="bottom-left-slide">
     <div class="inner-container-left-bottom">
-      <NuxtLink to="#" class="nav-links">BLOG</NuxtLink>
+      <NuxtLink to="#" class="nav-links">Blog</NuxtLink>
     </div>
   </div>
 
@@ -116,6 +119,22 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss">
+.profile-link {
+  position: fixed;
+  top: 25px;
+  left: 30px;
+  z-index: 100;
+  background-color: var(--brown);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__icon {
+    color: var(--beige);
+  }
+}
 .menu-btn {
   cursor: pointer;
   position: fixed;
@@ -346,6 +365,7 @@ div {
 .nav-links {
   text-decoration: none;
   color: var(--beige);
+  font-family: var(--font-body-heading), serif;
   font-size: 2.5rem;
   position: fixed;
   z-index: 4;

@@ -52,6 +52,7 @@ en préservant l’environnement et les traditions culturelles."
       <RateCard text="Claude & Laure"/>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script setup>

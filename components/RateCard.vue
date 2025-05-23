@@ -7,13 +7,13 @@
 <style>
 .rate-card {
   width: 360px;
-  height: 300px;
-  background: linear-gradient(to bottom, var(--brown) 7%, var(--beige) 70%);
+  height: 470px;
+  background: var(--brown);
   border-radius: 33px;
   display: flex;
   justify-content: center;
+  align-items: center;
   p {
-    padding-top: 80px;
     font-family: var(--font-body-heading), serif;
     font-size: 30px;
     color: var(--beige);

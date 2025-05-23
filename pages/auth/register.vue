@@ -1,18 +1,40 @@
 <template>
-  <div class="flex min-h-screen items-center justify-center bg-gray-50">
-    <UCard class="w-full max-w-md">
-      <h2 class="text-xl font-bold mb-4 text-center">Créer un compte</h2>
+  <Navbar />
+  <div class="hero-login">
+    <img class="hero-login__logo" src="/public/images/logo.png" alt="">
+    <h1>Inscription</h1>
+    <img class="hero-login__img-riziere" src="/public/images/riz-2.png" alt="">
+    <img class="hero-login__img-nuage" src="/public/images/nuage-hero.png"  alt="">
+  </div>
 
-      <form @submit.prevent="submitRegister" class="space-y-4">
-        <UInput v-model="username" placeholder="Nom d'utilisateur" icon="i-heroicons-user" />
-        <UInput v-model="email" placeholder="Email" type="email" icon="i-heroicons-envelope" />
-        <UInput v-model="password" placeholder="Mot de passe" type="password" icon="i-heroicons-lock-closed" />
-
-        <UButton type="submit" block :loading="loading">
-          S'inscrire
-        </UButton>
-      </form>
-    </UCard>
+  <div class="auth">
+    <div class="auth__container">
+      <img src="/images/contact.png" alt="illustration" />
+      <div class="auth__container__right">
+        <h3>Créer un compte</h3>
+        <form @submit.prevent="submitRegister" class="auth-form">
+          <div class="form-group">
+            <label for="username">Nom d'utilisateur</label>
+            <input v-model="username" type="text" id="username" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input v-model="email" type="email" id="email" />
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input v-model="password" type="password" id="password" />
+          </div>
+          <button type="submit" class="submit-btn" :disabled="loading">
+            S'inscrire
+          </button>
+          <p class="separator">OU</p>
+          <a href="/auth/login" class="submit-btn">
+            Se connecter
+          </a>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,7 +53,7 @@ const submitRegister = async () => {
   loading.value = true
   try {
     await register(username.value, email.value, password.value)
-    navigateTo('/')
+    navigateTo('/auth/login')
   } catch (e) {
     console.error('Erreur inscription', e)
   } finally {
@@ -39,3 +61,7 @@ const submitRegister = async () => {
   }
 }
 </script>
+
+<style lang="scss">
+@use "assets/scss/login";
+</style>
